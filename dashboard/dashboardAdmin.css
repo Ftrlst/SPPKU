@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: #f4f4f4;
+    /* padding: 20px; */
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.header {
+    background: rgba(127, 157, 176, 1);
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dashboard-content {
+    margin-top: 20px;
+}
+.card {
+    background: #dfeaf2;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.notif, .payment-list {
+    background: #e3eaf1;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.payment-box {
+    background: #aac3da;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    display: inline-block;
+}
