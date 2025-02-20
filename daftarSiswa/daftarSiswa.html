@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Siswa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header input {
+            margin-left: 40px;
+        }
+        .btn {
+            background: #3b82f6;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .search-box {
+            padding: 8px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #3b82f6;
+            color: white;
+        }
+        .actions i {
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pagination span {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .pagination .active {
+            background: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Daftar Siswa</h2>
+        <div class="header">
+            <button class="btn">➕ Tambah Siswa</button>
+            <input type="text" class="search-box" placeholder="Search...">
+        </div>
+        <table>
+            <tr>
+                <th>NIS</th>
+                <th>Nama</th>
+                <th>Nama Ibu Kandung</th>
+                <th>Kelas</th>
+                <th>Jurusan</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>111111</td>
+                <td>Ahmad Sobri</td>
+                <td>Janatun</td>
+                <td>X</td>
+                <td>RPL</td>
+                <td class="actions">👁️ ✏️ 🗑️</td>
+            </tr>
+            <tr>
+                <td>111112</td>
+                <td>Bayu Samudra</td>
+                <td>Nanik</td>
+                <td>X</td>
+                <td>RPL</td>
+                <td class="actions">👁️ ✏️ 🗑️</td>
+            </tr>
+            <tr>
+                <td>111113</td>
+                <td>Kamal Jalaludin</td>
+                <td>Kowiyah</td>
+                <td>X</td>
+                <td>RPL</td>
+                <td class="actions">👁️ ✏️ 🗑️</td>
+            </tr>
+            <tr>
+                <td>111114</td>
+                <td>Teguh Setiawan</td>
+                <td>Indah</td>
+                <td>X</td>
+                <td>RPL</td>
+                <td class="actions">👁️ ✏️ 🗑️</td>
+            </tr>
+            <tr>
+                <td>111115</td>
+                <td>Yanto Subejo</td>
+                <td>Nunuk</td>
+                <td>X</td>
+                <td>RPL</td>
+                <td class="actions">👁️ ✏️ 🗑️</td>
+            </tr>
+        </table>
+        <div class="pagination">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            .....
+        </div>
+    </div>
+</body>
+</html>

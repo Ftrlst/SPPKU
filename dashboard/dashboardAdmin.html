@@ -8,37 +8,87 @@
 </head>
 <body>
     <div class="header">
-        <img src="../asset/logo.png">
-        <span>👤</span>
+        <div class="image1">
+            <img src="../asset/logo.png">
+        </div>
+        <div class="image2">
+            <img src="../asset/ion_person-sharp.png" alt="">
+        </div>
     </div>
-    <h1>Dashboard</h1>
-    <div class="container">
-        <div class="dashboard-content">
-            <div class="card">
-                <div>
-                    <p><strong>Nama Sekolah</strong></p>
-                    <p>SMK BIGHIT DARUSSALAM</p>
+    <h2>Dashboard</h2>
+    <div class="main">
+        <div class="container">
+            <div class="time">
+                <p>Senin, 1 Januari 2025 | 12:12:12 | Selamat Siang, Admin</p>
+            </div>
+            <div class="bagian">
+                <div class="card">
+                    <div class="icon">
+                        <img src="../asset/twemoji_school.png">
+                    </div>
+                    <div class="teks1" style="padding-left: 10px;">
+                        <p><strong>Nama Sekolah</strong></p>
+                        <p>SMK BIGHIT DARUSSALAM</p>
+                    </div>
                 </div>
-                <div>
-                    <p><strong>Jumlah Jurusan</strong></p>
-                    <p>5</p>
+                <div class="card">
+                    <div class="icon">
+                        <img src="../asset/fluent-emoji-flat_desktop-computer.png">
+                    </div>
+                    <div class="teks" style="padding-left: 10px;">
+                        <p><strong>Jumlah Jurusan</strong></p>
+                        <p>5</p>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <p><strong>Siswa Aktif</strong></p>
-                <p>500</p>
+            <div class="bagian">
+                <div class="card">
+                    <div class="icon">
+                        <img src="../asset/ion_person-sharp.png">
+                    </div>
+                    <div class="teks" style="padding-left: 10px;">
+                        <p><strong>Siswa Aktif</strong></p>
+                        <p>500</p>
+                    </div>
+                </div>
             </div>
-            <div class="notif">
-                <h3>Notifikasi Pembayaran</h3>
-                <p>Ahmad Sobri membayar SPP Rp 150.000</p>
-                <p>Kamal Jalaludin membayar SPP Rp 150.000</p>
-            </div>
-            <div class="payment-list">
-                <h3>Daftar Pembayaran</h3>
-                <div class="payment-box">SPP <br> Rp 150.000</div>
-                <div class="payment-box">Praktek <br> Rp 200.000</div>
-                <div class="payment-box">Daftar Ulang <br> Rp 500.000</div>
-                <div class="payment-box">Ujian <br> Rp 20.000</div>
+            <div class="bagian2" style="display: flex;">
+                <div class="notif">
+                    <h3>Notifikasi Pembayaran</h3>
+                    <div class="boxnotif">
+                        <p>Ahmad Sobri</p>
+                        <p>Membayar SPP bulan Oktober senilai Rp 150.000</p>
+                        <p>10/10/2025 | 12.12.12 | Transfer</p>
+                    </div>
+                    <div class="boxnotif">
+                        <p>Kamal Jalaludin</p>
+                        <p>Membayar SPP bulan Oktober senilai Rp 150.000</p>
+                        <p>10/10/2025 | 12.12.12 | Setor Langsung</p>
+                    </div>
+                </div>
+                <div class="payment-list">
+                    <h3>Daftar Pembayaran</h3>
+                    <div class="payment" style="display: flex;">
+                        <div class="payment-box" style="background: rgba(127, 157, 176, 1); width: 110px; height: 50px;">
+                            <h4>SPP</h4>
+                            <p>Rp 150.000</p>
+                        </div> 
+                        <div class="payment-box" style="background: rgba(127, 157, 176, 1); width: 110px; height: 50px; margin-left: 10px;">
+                            <h4>Praktek</h4>
+                            <p>Rp 200.000</p>
+                        </div>
+                    </div>
+                    <div class="payment" style="display: flex;">
+                        <div class="payment-box" style="background: rgba(127, 157, 176, 1); width: 110px; height: 50px;">
+                            <h4>Daftar Ulang</h4>
+                            <p>Rp 500.000</p>
+                        </div>
+                        <div class="payment-box" style="background: rgba(127, 157, 176, 1); width: 110px; height: 50px; margin-left: 10px;">
+                            <h4>Ujian</h4>
+                            <p>Rp 20.000</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
