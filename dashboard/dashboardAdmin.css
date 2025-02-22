@@ -15,6 +15,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 1000;
 }
 .header img {
     width: 300px;
@@ -130,6 +132,31 @@ h2 {
     padding-left: 5px;
     margin-left: 10px;
 } */
+
+.form-card {
+    width: 300px;
+    background: #d5e3e6;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.form-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-card input, .form-card select, .form-card button {
+    padding: 8px;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+.form-card button {
+    background: #7f9db0;
+    color: white;
+    cursor: pointer;
+}
 
 
 

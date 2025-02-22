@@ -5,10 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin</title>
     <link rel="stylesheet" href="dashboardAdmin.css">
+    <style>
+        .sidebar {
+            position: absolute; /* Ubah dari fixed ke absolute */
+            width: 250px;
+            height: 100vh;
+            background: white;
+            top: 0;
+            left: -250px;
+            transition: 0.3s;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            padding: 60px 20px 20px;
+            color: black;
+            overflow-y: auto;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar ul li:hover {
+            background: #f0f0f0;
+        }
+
+        .sidebar ul li i {
+            margin-right: 10px;
+        }
+
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute; /* Ubah dari fixed ke absolute */
+            left: 15px;
+            top: 10px;
+            z-index: 1001; /* Pastikan tombol tetap di atas sidebar */
+        }
+    </style>
 </head>
 <body>
     <div class="header">
-        <div class="image1">
+        <!-- <div class="menu-toggle" onclick="toggleSidebar()">☰</div> -->
+        <?php include 'sidebar.php'; ?>
+        <div class="image1" style="margin-left: 25px">
             <img src="../asset/logo.png">
         </div>
         <div class="image2">
@@ -51,6 +104,21 @@
                         <p>500</p>
                     </div>
                 </div>
+                <div class="card form-card">
+                    <h3>Form Input Tagihan</h3>
+                    <form>
+                        <input type="text" placeholder="Nama Siswa" required>
+                        <input type="number" placeholder="Jumlah Tagihan" required>
+                        <select required>
+                            <option value="" disabled selected>Pilih Jenis Tagihan</option>
+                            <option value="SPP">SPP</option>
+                            <option value="Praktek">Praktek</option>
+                            <option value="Daftar Ulang">Daftar Ulang</option>
+                            <option value="Ujian">Ujian</option>
+                        </select>
+                        <button type="submit">Tambahkan</button>
+                    </form>
+                </div>
             </div>
             <div class="bagian2" style="display: flex;">
                 <div class="notif">
@@ -72,7 +140,7 @@
                         <div class="payment-box" style="background: rgba(127, 157, 176, 1); width: 110px; height: 50px;">
                             <h4>SPP</h4>
                             <p>Rp 150.000</p>
-                        </div> 
+                        </div>
                         <div class="payment-box" style="background: rgba(127, 157, 176, 1); width: 110px; height: 50px; margin-left: 10px;">
                             <h4>Praktek</h4>
                             <p>Rp 200.000</p>
@@ -92,5 +160,10 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
