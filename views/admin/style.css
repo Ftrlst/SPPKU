@@ -115,6 +115,12 @@ header .user-icon img {
     margin: 5px 0;
 } */
 
+.notif-rekening {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
 .notif-rekening-box {
     background: #dbe4eb;
     padding: 20px;
