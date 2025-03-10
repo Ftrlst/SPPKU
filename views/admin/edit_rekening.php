@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE rekening SET dana='$dana', gopay='$gopay', shopeepay='$shopeepay' WHERE id=1";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('Rekening berhasil diperbarui!'); window.location='rekening.php';</script>";
+        echo "<script>alert('Rekening berhasil diperbarui!'); window.location='dashboard.php';</script>";
     } else {
         echo "Error: " . $conn->error;
     }
