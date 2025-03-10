@@ -89,6 +89,11 @@ header {
     font-weight: bold;
 }
 
+.tagihan-item img{
+    width: 100px;
+    margin-left: 80px;
+}
+
 /* Form Pembayaran */
 .form-pembayaran {
     margin-top: 20px;
@@ -107,6 +112,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-top: 15px;
 }
 
 .btn-form i {
