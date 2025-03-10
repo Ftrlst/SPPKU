@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #6c869e;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.logo img {
+    width: 125px;
+}
+
+.user-icon i {
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome Box */
+.welcome-box {
+    background-color: #5a7a99;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.welcome-box h2 {
+    font-size: 20px;
+}
+
+.welcome-box p {
+    font-size: 16px;
+}
+
+/* List Tagihan */
+.tagihan-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.tagihan-item {
+    background: #dbe4eb;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tagihan-item i {
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+.tagihan-item a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+.tagihan-item img{
+    width: 100px;
+    margin-left: 80px;
+}
+
+/* Form Pembayaran */
+.form-pembayaran {
+    margin-top: 20px;
+}
+
+.btn-form {
+    background-color: #5a7a99;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-form i {
+    font-size: 20px;
+}
