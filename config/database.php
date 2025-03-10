@@ -2,8 +2,12 @@
 class Database {
     private $host = "localhost";
     private $user = "root";
-    private $pass = "fitriSQL"; 
+    private $pass = "";
     private $dbname = "spp_db";
+    // private $host = "localhost";
+    // private $user = "root";
+    // private $pass = "fitriSQL"; 
+    // private $dbname = "spp_db";
     public $conn;
 
     public function __construct() {
