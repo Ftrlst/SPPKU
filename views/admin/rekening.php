@@ -26,7 +26,7 @@ $rekening = $result->fetch_assoc();
 </head>
 <body>
     <h2>Kelola Rekening Pembayaran</h2>
-    <form action="update_rekening.php" method="POST">
+    <form action="edit_rekening.php" method="POST">
         <label>Dana:</label>
         <input type="text" name="dana" value="<?= $rekening['dana']; ?>" required>
         
