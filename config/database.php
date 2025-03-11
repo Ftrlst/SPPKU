@@ -1,20 +1,20 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $user = "root";
-    private $pass = "";
-    private $dbname = "spp_db";
-    // private $host = "localhost";
-    // private $user = "root";
-    // private $pass = "fitriSQL"; 
-    // private $dbname = "spp_db";
+    private $db_name = "spp_db";
+    private $username = "root";
+    private $password = "fitriSQL";
     public $conn;
 
-    public function __construct() {
-        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
-        if ($this->conn->connect_error) {
-            die("Koneksi gagal: " . $this->conn->connect_error);
+    public function getConnection() {
+        $this->conn = null;
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $exception) {
+            echo "Connection error: " . $exception->getMessage();
         }
+        return $this->conn;
     }
 }
 ?>

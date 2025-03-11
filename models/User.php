@@ -1,45 +1,24 @@
 <?php
-require_once __DIR__ . '/../config/database.php';
-
 class User {
-    private $db;
+    private $conn;
+    private $table_name = "users";
 
-    public function __construct() {
-        $this->db = new Database(); // Memanggil database yang sudah benar
+    public $id_user;
+    public $username;
+    public $password;
+    public $role;
+    public $nama_lengkap;
+
+    public function __construct($db) {
+        $this->conn = $db;
     }
 
-    public function login($username, $password) {
-        $conn = $this->db->conn;
-        $query = "SELECT id_user, username, role, password FROM users WHERE username = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("s", $username);
+    public function login() {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE username = :username LIMIT 1";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':username', $this->username);
         $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows > 0) {
-            $user = $result->fetch_assoc();
-            if ($password === $user['password']) {
-                return $user;
-            }else {
-                die("Password salah!"); // Debugging
-            }         
-        }else {
-            die("Username tidak ditemukan!"); // Debugging
-        }
-        // return false;
-    }
-
-    public function getAllAdmins() {
-        $conn = $this->db->conn;
-        $query = "SELECT * FROM admin";
-        $stmt = $conn->query($query);
-
-        $admins = [];
-        while ($row = $stmt->fetch_assoc()) {
-            $admins[] = $row;
-        }
-
-        return $admins;
+        return $stmt;
     }
 }
 ?>

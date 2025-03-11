@@ -63,7 +63,7 @@ header .user-icon img {
     /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
     gap: 15px;
     margin-top: 15px;
-    width: 800px;
+    width: 80%;
 }
 
 .card {
@@ -126,7 +126,7 @@ header .user-icon img {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px;
     margin-top: 15px;
-    width: 1000px;
+    width: 50%;
 }
 .notif-rekening-box {
     background: #dbe4eb;
@@ -181,13 +181,13 @@ header .user-icon img {
 }
 
 /* Tombol Close Modal */
-/* .close {
+.close {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 20px;
     cursor: pointer;
-} */
+}
 .close {
     color: red;
     float: right;
@@ -246,6 +246,200 @@ header .user-icon img {
 
 .modal-content button:hover {
     background-color: #486b84;
+}
+
+.closes {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.closes {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closes:hover {
+    color: darkred;
+}
+
+
+
+
+
+
+
+
+/* daftarSiswa */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1000px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    color: #343a40;
+}
+
+.table {
+    background: white;
+    border-collapse: collapse;
+}
+
+.table th {
+    background: #6c94b6;
+    color: white;
+    text-align: center;
+}
+
+.table td, .table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.btn {
+    border-radius: 8px;
+}
+
+.search-box {
+    max-width: 250px;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #6c94b6;
+    border-color: #6c94b6;
+}
+
+
+
+/* Modal tambah siswa*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Konten Modal */
+/* .modal-content {
+    background-color: #f0f8ff;
+    padding: 20px;
+    width: 50%;
+    margin: 10% auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #000;
+} */
+
+/* Tombol Close */
+/* .close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+} */
+
+/* Styling Form */
+/* input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+} */
+
+/* Tombol Simpan */
+/* .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; */
+/* } */
+
+/* .btn-primary:hover {
+    background-color: #0056b3;
+} */
+ /* Gaya dasar modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Menghindari scroll di seluruh halaman */
+}
+
+/* Konten modal */
+.modal-content {
+    background-color: #e3eff3;
+    margin: 5% auto;
+    padding: 20px;
+    width: 50%;
+    max-height: 80vh; /* Membatasi tinggi modal */
+    border-radius: 10px;
+    overflow-y: auto !important; /* Menambahkan scroll jika konten terlalu panjang */
+}
+
+/* Tombol close */
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Gaya input */
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Tombol Simpan */
+.btn-primary {
+    width: 30%;
+    background-color: #5c91c0;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #4178a0;
 }
 
 
