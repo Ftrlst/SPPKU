@@ -8,13 +8,13 @@ $conn = $db->getConnection();
 $user = new User($conn);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $user->username = $_POST['username'];
-    $user->password = $_POST['password']; // Password diketik oleh user
-    $stmt = $user->login();
+    $username = $_POST['username'];
+    $password = $_POST['password']; 
+
+    $stmt = $user->login($username, $password);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
-    // Cek apakah username ditemukan dan password cocok
-    if ($row && $user->password === $row['password']) { 
+    if ($row && $password === $row['password']) { 
         $_SESSION['user_id'] = $row['id_user'];
         $_SESSION['role'] = $row['role'];
 
@@ -28,4 +28,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Login gagal!";
     }
 }
+
 ?>

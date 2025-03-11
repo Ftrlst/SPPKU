@@ -13,5 +13,15 @@ class Rekening {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getAllRekening() {
+        $query = "SELECT jenis_pembayaran, nomor_rekening, atas_nama FROM rekening";
+        
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    
 }
 ?>
