@@ -27,6 +27,7 @@ $siswa_aktif = $user->getJumlahSiswaAktif();
 $notif_pembayaran = $pembayaran->getRecentPembayaran();
 $daftar_rekening = $rekening->getAllRekening();
 $jumlah_tagihan = $tagihan->getTotalTagihan();
+$jurusanList = $user->getAllJurusan(); // Ambil daftar jurusan dari database
 
 ?>
 
@@ -75,39 +76,45 @@ $jumlah_tagihan = $tagihan->getTotalTagihan();
                 <div class="card">
                     <button id="btnTambahTagihan">Tambah Tagihan</button>
 
-                  <!-- Modal Form Input Tagihan -->
-<div id="modalTagihan" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Input Tagihan</h2>
-        <form action="../../controllers/TagihanController.php" method="POST">
-            <label for="jurusan">Pilih Jurusan:</label>
-            <select name="jurusan" id="jurusan" required>
-                <option value="">-- Pilih Jurusan --</option>
-                <?php foreach ($jurusanList as $jurusan) { ?>
-                    <option value="<?= $jurusan['jurusan_id']; ?>"><?= $jurusan['nama_jurusan']; ?></option>
-                <?php } ?>
-            </select>
 
-            <label for="kelas">Pilih Kelas:</label>
-            <select name="kelas" id="kelas" required>
-                <option value="">-- Pilih Kelas --</option>
-            </select>
+                    <!-- Modal Form Input Tagihan -->
+                    <div id="modalTagihan" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Input Tagihan</h2>
+                            <form action="../../controllers/TagihanController.php" method="POST">
+                                <label for="jurusan">Pilih Jurusan:</label>
+                                <select name="jurusan" id="jurusan" required>
+                                    <option value="">-- Pilih Jurusan --</option>
+                                    <?php foreach ($jurusanList as $jurusan) { ?>
+                                        <option value="<?= $jurusan['jurusan']; ?>"><?= $jurusan['jurusan']; ?></option>
+                                    <?php } ?>
+                                </select>
 
-            <label for="jenis_tagihan">Jenis Tagihan:</label>
-            <select name="jenis_tagihan" id="jenis_tagihan" required>
-                <option value="">-- Pilih Jenis Tagihan --</option>
-                <option value="Ujian">Ujian</option>
-                <option value="Praktek">Praktek</option>
-            </select>
+                                <label for="kelas">Pilih Kelas:</label>
+                                <select name="kelas" id="kelas" required>
+                                    <option value="">-- Pilih Kelas --</option>
+                                    <option value="X">X</option>
+                                    <option value="XI">XI</option>
+                                    <option value="XII">XII</option>
+                                </select>
 
-            <label for="nominal">Nominal:</label>
-            <input type="number" name="nominal" id="nominal" required min="0">
+                                <label for="jenis_tagihan">Jenis Tagihan:</label>
+                                <select name="jenis_tagihan" id="jenis_tagihan" required>
+                                    <option value="">-- Pilih Jenis Tagihan --</option>
+                                    <option value="SPP">SPP</option>
+                                    <option value="Daftar Ulang">Daftar Ulang</option>
+                                    <option value="Ujian">Ujian</option>
+                                    <option value="Praktek">Praktek</option>
+                                </select>
 
-            <button type="submit" name="submit">Simpan</button>
-        </form>
-    </div>
-</div>
+                                <label for="tagihan">Nominal:</label>
+                                <input type="number" name="tagihan" id="tagihan" required min="0">
+
+                                <button type="submit" name="submit">Simpan</button>
+                            </form>
+                        </div>
+                    </div>
 
                 </div>
             </div>

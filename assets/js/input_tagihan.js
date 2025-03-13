@@ -37,7 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!response.ok) throw new Error("Gagal mengambil data kelas!");
 
             const data = await response.json();
+            console.log("Data kelas:", data); // Debugging
 
+            if (data.length === 0) {
+                console.warn("Tidak ada kelas ditemukan untuk jurusan ini.");
+                return;
+            }
+    
             data.forEach(kelas => {
                 const option = document.createElement("option");
                 option.value = kelas.kelas_id;

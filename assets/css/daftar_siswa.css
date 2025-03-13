@@ -1,0 +1,78 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: auto;
+    overflow-y: auto;
+    background: #d0e3eb;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.modal-content {
+    /* background-color: white; */
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    width: 140px; /* Lebar label tetap */
+    font-weight: bold;
+    text-align: left;
+}
+
+.form-group input,
+.form-group select {
+    width: calc(100% - 150px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group input[type="file"] {
+    border: none;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button-container button {
+    background: #5d93b1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background: #4a7f99;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
