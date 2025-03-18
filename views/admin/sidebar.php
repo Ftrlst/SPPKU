@@ -11,13 +11,16 @@
     </div>
     <ul class="sidebar-menu">
         <li><a href="dashboard.php"><i class="icon-dashboard"></i> Dashboard</a></li>
-        <li><a href="siswa.php"><i class="icon-users"></i> Daftar Siswa</a></li>
+        <li><a href="daftar_siswa.php"><i class="icon-users"></i> Daftar Siswa</a></li>
         <li><a href="tagihan.php"><i class="icon-list"></i> List SPP</a></li>
         <li><a href="transaksi.php"><i class="icon-history"></i> Riwayat Transaksi</a></li>
     </ul>
     <div class="logout">
-        <a href="logout.php"><i class="icon-logout"></i> Keluar</a>
+        <form action="../../controllers/logout.php" method="POST">
+    <button type="submit" onclick="return confirm('Yakin ingin logout?')">🚪 Logout</button>
+</form>
     </div>
+
 </aside>
 
 

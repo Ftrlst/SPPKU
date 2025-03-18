@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!jurusan_id) return; // Jika tidak ada jurusan yang dipilih, hentikan proses
 
         try {
-            const response = await fetch(`../../controllers/TagihanController.php?action=getKelas&jurusan_id=${jurusan_id}`);
+            const response = await fetch(`../../controllers/TagihanController.php?action=getKelas=${jurusan_id}`);
             if (!response.ok) throw new Error("Gagal mengambil data kelas!");
 
             const data = await response.json();
@@ -61,4 +61,62 @@ document.addEventListener("DOMContentLoaded", function () {
             getKelas(this.value);
         });
     }
+
+    // async function getKelas(jurusan_id) {
+    //     kelasSelect.innerHTML = '<option value="">-- Pilih Kelas --</option>'; // Reset kelas
+    
+    //     if (!jurusan_id) return; // Jika tidak ada jurusan yang dipilih, hentikan proses
+    
+    //     try {
+    //         const response = await fetch(`../../controllers/TagihanController.php?action=getKelas=${jurusan_id}`);
+    //         if (!response.ok) throw new Error("Gagal mengambil data kelas!");
+    
+    //         const data = await response.json();
+    //         console.log("Data kelas:", data); // Debugging
+    
+    //         if (data.length === 0) {
+    //             console.warn("Tidak ada kelas ditemukan untuk jurusan ini.");
+    //             return;
+    //         }
+    
+    //         data.forEach(kelas => {
+    //             const option = document.createElement("option");
+    //             option.value = kelas.kelas_id;
+    //             option.textContent = kelas.nama_kelas;
+    //             kelasSelect.appendChild(option);
+    //         });
+    //     } catch (error) {
+    //         console.error("Error fetching kelas:", error);
+    //     }
+    // }
+    
+    async function getKelas(jurusan_id) {
+        kelasSelect.innerHTML = '<option value="">-- Pilih Kelas --</option>'; // Reset kelas
+    
+        if (!jurusan_id) return; // Jika tidak ada jurusan yang dipilih, hentikan proses
+    
+        try {
+            const response = await fetch(`../../controllers/TagihanController.php?action=getKelas&jurusan_id=${jurusan_id}`);
+            const text = await response.text(); // Ambil teks response sebelum diubah ke JSON
+            console.log("Response Text:", text); // Debugging: lihat isi response dari server
+            
+            const data = JSON.parse(text); // Ubah manual ke JSON
+            console.log("Data kelas:", data); // Debugging
+            
+            if (data.length === 0) {
+                console.warn("Tidak ada kelas ditemukan untuk jurusan ini.");
+                return;
+            }
+    
+            data.forEach(kelas => {
+                const option = document.createElement("option");
+                option.value = kelas.kelas_id;
+                option.textContent = kelas.nama_kelas;
+                kelasSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error("Error fetching kelas:", error);
+        }
+    }
+    
 });

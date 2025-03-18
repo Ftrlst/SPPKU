@@ -19,6 +19,7 @@ $tagihanList = $tagihanModel->getTagihanSPP(); // Mengambil hanya tagihan SPP
 </head>
 
 <body>
+<?php include "sidebar.php"; ?>
     <h2>List Tagihan SPP</h2>
 
     <input type="text" id="search" placeholder="Cari..." onkeyup="searchTable()">
@@ -66,6 +67,7 @@ $tagihanList = $tagihanModel->getTagihanSPP(); // Mengambil hanya tagihan SPP
             });
         }
     </script>
+    <script src="../../assets/js/sidebar.js"></script>
 
 </body>
 

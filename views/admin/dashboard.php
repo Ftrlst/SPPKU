@@ -141,6 +141,31 @@ $jurusanList = $user->getAllJurusan(); // Ambil daftar jurusan dari database
             </div>
         </main>
     </div>
+
+    <script>
+    document.getElementById('jurusan').addEventListener('change', function () {
+        let jurusan = this.value;
+        let kelasDropdown = document.getElementById('kelas');
+
+        // Kosongkan pilihan kelas saat jurusan berubah
+        kelasDropdown.innerHTML = '<option value="">-- Pilih Kelas --</option>';
+
+        if (jurusan !== '') {
+            fetch('../../controllers/TagihanController.php/get_kelas?jurusan=' + jurusan)
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(kelas => {
+                        let option = document.createElement('option');
+                        option.value = kelas.kelas_id;
+                        option.textContent = kelas.nama_kelas;
+                        kelasDropdown.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    });
+</script>
+
     <script src="../../assets/js/sidebar.js"></script>
     <script src="../../assets/js/input_tagihan.js"></script>
 </body>

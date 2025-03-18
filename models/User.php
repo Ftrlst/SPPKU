@@ -117,15 +117,20 @@ class User {
         
         return $result;
     }
+
+
+    public function getSiswaById($id) {
+        $query = "SELECT * FROM users WHERE id_user = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
     
     
     
     
-    
-    
-    
-    
-    
+ 
     
     
 }

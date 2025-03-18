@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+<?php include "sidebar.php"; ?>
 <link rel="stylesheet" href="../../assets/css/daftar_siswa.css">
 <div class="container">
     <h2>Daftar Siswa</h2>
@@ -72,5 +73,5 @@ function closeForm() {
     document.getElementById("popupForm").style.display = "none";
 }
 </script>
-
+<script src="../../assets/js/sidebar.js"></script>
 <script src="../../assets/js/daftar_siswa.js"></script>

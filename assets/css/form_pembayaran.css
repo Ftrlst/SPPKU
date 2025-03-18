@@ -1,0 +1,85 @@
+/* Reset Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background dan Container */
+body {
+    background: #eef5f9;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul */
+h2 {
+    text-align: center;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label */
+label {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 15px;
+}
+
+/* Input dan Select */
+input, select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* File Input */
+input[type="file"] {
+    border: none;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1f6695;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}

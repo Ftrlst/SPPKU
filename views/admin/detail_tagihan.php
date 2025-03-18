@@ -86,6 +86,7 @@ $detailTagihan = $tagihanModel->getTagihanBySiswa($id_siswa);
 
     <script>
         function openModal(idTagihan, maxNominal) {
+            console.log("ID Tagihan:", idTagihan);  // Debugging
             document.getElementById('id_tagihan').value = idTagihan;
             document.getElementById('nominal').value = '';
             document.getElementById('nominal').setAttribute('max', maxNominal);
@@ -106,27 +107,49 @@ $detailTagihan = $tagihanModel->getTagihanBySiswa($id_siswa);
                 return;
             }
 
-            fetch('proses_pembayaran.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `id_tagihan=${idTagihan}&nominal=${nominal}`
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    let newAmount = data.new_amount;
-                    let statusCell = document.querySelector(`.status-${idTagihan}`);
-                    let amountCell = document.querySelector(`.tagihan-amount[data-id='${idTagihan}']`);
+            // fetch('../../controllers/TagihanController.php', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            //     body: `id_tagihan=${idTagihan}&nominal=${nominal}`
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     if (data.success) {
+            //         let newAmount = data.new_amount;
+            //         let statusCell = document.querySelector(`.status-${idTagihan}`);
+            //         let amountCell = document.querySelector(`.tagihan-amount[data-id='${idTagihan}']`);
                     
-                    if (newAmount == 0) {
-                        statusCell.innerHTML = '<span style="color:green">Lunas</span>';
-                    }
-                    amountCell.innerHTML = 'Rp.' + newAmount.toLocaleString('id-ID');
-                }
-                alert(data.message);
-                closeModal();
-            })
-            .catch(error => console.error('Error:', error));
+            //         if (newAmount == 0) {
+            //             statusCell.innerHTML = '<span style="color:green">Lunas</span>';
+            //         }
+            //         amountCell.innerHTML = 'Rp.' + newAmount.toLocaleString('id-ID');
+            //     }
+            //     alert(data.message);
+            //     closeModal();
+            // })
+            // .catch(error => console.error('Error:', error));
+            fetch('../../controllers/Pembayaran.php?action=pembayaran', { 
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `id_tagihan=${idTagihan}&nominal=${nominal}`
+})
+.then(response => response.text())  // Ubah sementara ke .text() untuk melihat respon mentah
+.then(data => {
+    console.log("Server Response:", data); // Debug di console
+    try {
+        let jsonData = JSON.parse(data); // Coba parse ke JSON
+        if (jsonData.status === "success") {
+            alert(jsonData.message);
+            location.reload();
+        } else {
+            alert(jsonData.message);
+        }
+    } catch (error) {
+        console.error("JSON Parse Error:", error, "Response:", data);
+    }
+})
+.catch(error => console.error('Fetch Error:', error));
+
         }
     </script>
 </body>
